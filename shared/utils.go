@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-// panics if it fails to read all lines
+// ReadAllLines panics if it fails to read all lines
 func ReadAllLines(fileName string) []string {
 	dat, err := os.Open(fileName)
 	defer dat.Close()
@@ -66,4 +66,16 @@ func ToIntOrPanic(intable string) int {
 	parsed, err := strconv.Atoi(intable)
 	Check(err)
 	return parsed
+}
+
+func Unique[T comparable](s []T) []T {
+	inResult := make(map[T]bool)
+	var result []T
+	for _, str := range s {
+		if _, ok := inResult[str]; !ok {
+			inResult[str] = true
+			result = append(result, str)
+		}
+	}
+	return result
 }
