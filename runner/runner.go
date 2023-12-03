@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	dayPtr := flag.String("day", "1", "which day's code to run. format is 1a, 1b, 2a, etc.")
+	dayPtr := flag.String("day", "", "which day's code to run. format is -day=1a")
 
 	flag.Parse()
 
@@ -21,6 +21,8 @@ func main() {
 		day1.ExecuteDay1b()
 	case "2a":
 		day2.ExecuteDay2a()
+	case "2b":
+		day2.ExecuteDay2b()
 	default:
 		log.Fatalf("failed to parse args")
 	}

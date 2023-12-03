@@ -22,7 +22,7 @@ func ExecuteDay1b() {
 		shared.Check(err)
 		numbers[idx] = parsedInt
 	}
-	fmt.Println(sum(numbers...))
+	fmt.Println(shared.Sum(numbers...))
 }
 
 var numToNum map[string]string = map[string]string{

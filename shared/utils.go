@@ -2,7 +2,9 @@ package shared
 
 import (
 	"bufio"
+	"errors"
 	"os"
+	"strconv"
 )
 
 // panics if it fails to read all lines
@@ -30,8 +32,38 @@ func Sum(input ...int) int {
 	return sum
 }
 
+func Max(input []int) (int, error) {
+	if len(input) == 0 {
+
+		return 0, errors.New("empty array provided")
+	}
+	var max int = input[0]
+
+	for _, val := range input {
+		if val > max {
+			max = val
+		}
+	}
+
+	return max, nil
+}
+
+// wtf - why is this not in stdlib?????
+func IntMin(a, b int) int {
+	if a == b || a > b {
+		return a
+	}
+	return b
+}
+
 func Check(e error) {
 	if e != nil {
 		panic(e)
 	}
+}
+
+func ToIntOrPanic(intable string) int {
+	parsed, err := strconv.Atoi(intable)
+	Check(err)
+	return parsed
 }
