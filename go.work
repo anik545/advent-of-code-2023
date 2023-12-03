@@ -1,0 +1,7 @@
+go 1.19
+
+use ./day1
+use ./day2
+use ./runner
+use ./cmd/tryingout
+use ./shared
