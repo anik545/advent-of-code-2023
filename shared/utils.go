@@ -12,7 +12,7 @@ func ReadAllLines(fileName string) []string {
 	dat, err := os.Open(fileName)
 	defer dat.Close()
 
-	var lines []string = make([]string, 0)
+	var lines = make([]string, 0)
 
 	Check(err)
 	scanner := bufio.NewScanner(dat)
@@ -37,7 +37,7 @@ func Max(input []int) (int, error) {
 
 		return 0, errors.New("empty array provided")
 	}
-	var max int = input[0]
+	var max = input[0]
 
 	for _, val := range input {
 		if val > max {
@@ -48,7 +48,7 @@ func Max(input []int) (int, error) {
 	return max, nil
 }
 
-// wtf - why is this not in stdlib?????
+// IntMin wtf - why is this not in stdlib?????
 func IntMin(a, b int) int {
 	if a == b || a > b {
 		return a

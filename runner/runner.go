@@ -4,6 +4,7 @@ import (
 	"aoc/day1"
 	"aoc/day2"
 	"aoc/day3"
+	"aoc/day4"
 	"flag"
 	"fmt"
 	"log"
@@ -28,6 +29,10 @@ func main() {
 		day3.ExecuteDay3a()
 	case "3b":
 		day3.ExecuteDay3b()
+	case "4a":
+		day4.Execute4a()
+	case "4b":
+		day4.Execute4b()
 	default:
 		log.Fatalf("failed to parse args")
 	}
